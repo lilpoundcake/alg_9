@@ -28,7 +28,7 @@ def BFS(graph, s):
         for i in graph.adj[v]:
             if graph.attributes[i]['color'] == 'white':
                 q.append(i)
-                graph.attributes[i]['d'] += 1
+                graph.attributes[i]['d'] = int(graph.attributes[v]['d']) + 1
                 graph.attributes[i]['color'], graph.attributes[i]['pi'] = 'gray', v
         graph.attributes[v]['color'] = 'black'
     graph.draw('{}'.format(step+1))
