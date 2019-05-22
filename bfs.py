@@ -33,6 +33,20 @@ def BFS(graph, s):
         graph.attributes[v]['color'] = 'black'
     graph.draw('{}'.format(step+1))
 
+def route(graph, s, e):
+    BFS(graph, s)
+    route_num = []
+    start = graph.attributes[s]['d']
+    end = e
+    num = 0
+    route_num.append(end)
+    while num < start:
+        pi = graph.attributes[j]['pi']
+        route_num.append(pi)
+        end = pi
+        num += 1
+    return(route_num)
+    
 def main():
     g = MyGraph()
     g.add_vertices(8)
